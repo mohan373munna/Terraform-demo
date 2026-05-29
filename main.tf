@@ -45,7 +45,7 @@ resource "aws_instance" "mohan_terraform_demo" {
     }
 }
 
-resource "aws_ebs_volume" "terraform_volume" {
+resource "aws_ebs_volume" "mohan_terraform_volume" {
     availability_zone = "us-east-1a"
     size              = 10
     type              = "gp3"
@@ -56,8 +56,8 @@ resource "aws_ebs_volume" "terraform_volume" {
 }
 
 
-resource "aws_volume_attachment" "terraform_volume_attachment" {
+resource "aws_volume_attachment" "mohan_terraform_volume_attachment" {
     device_name = "/dev/sdf"
-    volume_id   = aws_ebs_volume.terraform_volume.id
+    volume_id   = aws_ebs_volume.mohan_terraform_volume.id
     instance_id = aws_instance.mohan_terraform_demo.id
 }
