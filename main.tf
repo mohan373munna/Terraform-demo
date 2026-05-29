@@ -39,7 +39,7 @@ resource "aws_instance" "mohan_terraform_demo" {
     associate_public_ip_address = true
 
     tags = {
-        Name = "TerraformDemoInstance"
+        Name = "MohanTerraformDemoInstance"
         Environment = "Terraform-Demo"
 
     }
@@ -50,7 +50,7 @@ resource "aws_ebs_volume" "terraform_volume" {
     size              = 10
     type              = "gp3"
     tags = {
-        Name = "TerraformDemoVolume"
+        Name = "MohanTerraformDemoVolume"
         Environment = "Terraform-Demo"
     }
 }
