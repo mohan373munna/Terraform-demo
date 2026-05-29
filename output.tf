@@ -4,12 +4,12 @@ output "aws_ec2_instance_public_ip" {
 }
 
 output "aws_ec2_instance_id" {
-    value = aws_instance.terraform_demo.id
+    value = aws_instance.mohan_terraform_demo.id
     description = "ID of the EC2 instance"
 }
 
 output "aws_security_group_id" {
-    value = aws_security_group.terraform_sg.id
+    value = aws_security_group.mohan_terraform_sg.id
     description = "ID of the security group"
 }
 

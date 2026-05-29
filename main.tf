@@ -30,7 +30,7 @@ resource "aws_security_group" "mohan_terraform_sg" {
     }
 }
 
-resource "aws_instance" "terraform_demo" {
+resource "aws_instance" "mohan_terraform_demo" {
     ami          = "ami-0b183bb1259186479"
     instance_type = "t4g.small"
     key_name     = "terraform-demo"
@@ -39,25 +39,25 @@ resource "aws_instance" "terraform_demo" {
     associate_public_ip_address = true
 
     tags = {
-        Name = "TerraformDemoInstance"
+        Name = "MohanTerraformDemoInstance"
         Environment = "Terraform-Demo"
 
     }
 }
 
-resource "aws_ebs_volume" "terraform_volume" {
+resource "aws_ebs_volume" "mohan_terraform_volume" {
     availability_zone = "us-east-1a"
     size              = 10
     type              = "gp3"
     tags = {
-        Name = "TerraformDemoVolume"
+        Name = "MohanTerraformDemoVolume"
         Environment = "Terraform-Demo"
     }
 }
 
 
-resource "aws_volume_attachment" "terraform_volume_attachment" {
+resource "aws_volume_attachment" "mohan_terraform_volume_attachment" {
     device_name = "/dev/sdf"
-    volume_id   = aws_ebs_volume.terraform_volume.id
-    instance_id = aws_instance.terraform_demo.id
+    volume_id   = aws_ebs_volume.mohan_terraform_volume.id
+    instance_id = aws_instance.mohan_terraform_demo.id
 }
