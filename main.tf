@@ -3,9 +3,9 @@ provider "aws" {
     region = "us-east-1"
 }
 
-resource "aws_security_group" "terraform_sg" {
-    name        = "terraform_security_group"
-    description = "Security group for terraform_demo instance"
+resource "aws_security_group" "mohan_terraform_sg" {
+    name        = "mohan_terraform_security_group"
+    description = "Security group for mohan_terraform_demo instance"
     vpc_id      = "vpc-09675635bce85b531"
 
     ingress {
@@ -34,7 +34,7 @@ resource "aws_instance" "terraform_demo" {
     ami          = "ami-0b183bb1259186479"
     instance_type = "t4g.small"
     key_name     = "terraform-demo"
-    vpc_security_group_ids = [aws_security_group.terraform_sg.id]
+    vpc_security_group_ids = [aws_security_group.mohan_terraform_sg.id]
     subnet_id = "subnet-05db414ebc6d87bdd"
     associate_public_ip_address = true
 
